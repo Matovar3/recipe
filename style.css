@@ -1,0 +1,328 @@
+/* -------------------- IMPORTED FONTS -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+/*--- CSS RESET --- is just googling it the way to go? Because that's what I did.*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+
+:root {
+    --header-font: Bebas Neue;
+
+    --h1: 40px;
+    --h2: 30px;
+    --h3: 20px;
+    --nav-a: 20px;
+	--nav-span: 20px;
+	--menu-li: 20px;
+	--social-li: 20px;
+	--footer: 20px;
+
+    --dark-blue: #7abfbf;
+    --light-blue: rgba(122,191,191,.5);
+	--orange: #Eb5428;
+	--black: #0d0d0d;
+	--white: #ffffff;
+    --cream: #f2f2f2
+}
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+
+header {
+	background-color: var(--white);
+	text-align: center;
+	padding: 20px;
+}
+
+
+header h1 {
+	color: var(--white);
+	font-size: var(--h1-size);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+	margin-bottom: 20px;
+}
+
+header p {
+	color: var(--white);
+	font-style: italic;
+}
+body {
+	font-family: var(--body-font);
+	background-color: var(--white);
+}
+
+
+nav {
+	margin-top: 30px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+nav a {
+	color: var(--white);
+	background-color: var(--orange);
+	padding: 10px;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 5px;
+	font-family: var(--body-font);
+	font-weight: bold;
+	width: 250px;
+	display: inline-block;
+	margin: 10px;
+	border: 1px solid var(--white);
+}
+
+#top-button a{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	text-decoration: none;
+	background-color: var(--orange);
+	color: var(--white);
+	font-family: var(--body-font); 
+	padding: 20px 15px;
+	border: 2px solid var(--white); 
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+main {
+	padding: 20px;
+}
+
+main p {
+	line-height: 1.6;
+}
+
+main h2 {
+	font-family: var(--header-font);
+	font-size: var(--h2-size);
+	line-height: 2;
+}
+
+main h3 {
+	font-family: var(--header-font);
+	font-size: var(--h3-size);
+	margin-top: 10px;
+	text-align: center;
+	padding: 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+ul img {
+	width: 100%;
+}
+
+section li {
+	display: block;
+	margin: 20px;
+}
+
+figure {
+	position: relative;
+	width: 100%; 
+	margin: 0;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+figcaption {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: rgba(0, 0, 0, 0.7);
+	color: var(--white);
+	text-align: center;
+	padding: 10px;
+	font-size: var(--text-size);
+	font-family: var(--body-font);
+	width: 45%;
+}
+
+footer {
+	background-color: var(--green);
+	padding: 20px;
+	text-align: center;
+	color: var(--white);
+	line-height: 1.5;
+}
+
+footer h2 {
+	font-family: var(--header-font);
+	font-size: var(--h2-size);
+	line-height: 2;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--white-color);
+}
+
+.hours {
+	margin-top: 50px;
+}
+
+.copyright {
+	font-family: var(--body-font);
+	background-color: var(--white);
+	color: var(--green);
+	margin: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media (min-width: 834px) {
+
+    header {
+        display: flex;
+        flex: space-between;
+        align-items: center;
+    }
+   
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+   
+    main ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+   
+    footer { 
+        display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+       }
+   
+    .hours { 
+           margin: 0;
+    }
+} 
+
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media (min-width: 1280px) {
+
+    .banner {
+		display: flex;
+        flex-wrap: nowrap;
+		background-color: var(--green);
+    }
+
+	header {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	nav {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+	}
+
+	nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+	}
+
+	main ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); 
+	}
+
+	footer {
+		display: flex;
+		flex-wrap: wrap;
+ }
+
+	.contact, .hours {
+		display: flex;
+		flex-wrap: wrap;
+		width: 50%; 
+		}
+
+	.footer-column {
+			width: 50%;
+	}
+}
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media (min-width: 1440px) {
+
+	nav { 
+	    justify-content: flex-end;
+	}
+
+	main ul {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr); 
+	}
+}
