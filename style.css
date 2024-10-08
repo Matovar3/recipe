@@ -178,10 +178,13 @@ nav a:hover {
 
 }
 
-body {
+main {
 	background-color: var(--cream);
 }
 
+main p, dd, dt, li {
+    padding: 15px;
+}
 
 
 dd, p, li, nav, input {
@@ -211,6 +214,19 @@ input {
 section li {
 	display: block;
 	margin: 20px;
+}
+
+h2 {
+    font-family: var(--bebas-font);
+    font-size: var(--h2);
+    text-align: center;
+
+}
+
+#details
+
+#ingredients {
+    list-style: square;
 }
 
 figure {
