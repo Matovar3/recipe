@@ -1,6 +1,6 @@
 /* -------------------- IMPORTED FONTS -------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
-/*--- CSS RESET --- is just googling it the way to go? Because that's what I did.*/
+/*--- CSS RESET --- */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,16 +52,15 @@ table {
 /* -------------------- ROOT VARIABLES --------------------------------------- */
 
 :root {
-    --header-font: Bebas Neue;
+
+    --bebas-font: "Bebas Neue", serif; 
+    --mont-font: "Montserrat", serif;
+
 
     --h1: 40px;
     --h2: 30px;
     --h3: 20px;
-    --nav-a: 20px;
-	--nav-span: 20px;
-	--menu-li: 20px;
-	--social-li: 20px;
-	--footer: 20px;
+
 
     --dark-blue: #7abfbf;
     --light-blue: rgba(122,191,191,.5);
@@ -73,101 +72,140 @@ table {
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
 
 header {
-	background-color: var(--white);
+	background-color: var(--cream);
 	text-align: center;
 	padding: 20px;
 }
 
 
 header h1 {
-	color: var(--white);
-	font-size: var(--h1-size);
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-	margin-bottom: 20px;
+	color: var(--black);
+    font-family: var(--bebas-font);
+	font-size: var(--h1);
+	margin-top: 50px;
 }
 
-header p {
-	color: var(--white);
-	font-style: italic;
+a {
+    text-decoration: none;
 }
-body {
-	font-family: var(--body-font);
-	background-color: var(--white);
-}
-
 
 nav {
-	margin-top: 30px;
+    grid-area: nav;
+    min-width: 414px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #bbb;
+    position: fixed;
+    top: 0;
+    z-index:5;
 }
-
 nav ul {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    grid-area: hamberger;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
 }
+nav li img {
+    display: none;
+}
+nav li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    position: relative;
+    bottom: 5px;
+    left: 30px;
+}
+nav span {
+    display: block;
+    position: relative;
+ }
+nav label svg {
+    display: block;
+}
+label span:before, label span:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+nav input {
+    display: none;
+}
+nav input:checked ~ ul {
+    max-height: 550px;
+}
+nav h2 {
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+}
+
 nav a {
-	color: var(--white);
-	background-color: var(--orange);
-	padding: 10px;
-	text-decoration: none;
-	text-align: center;
-	border-radius: 5px;
-	font-family: var(--body-font);
-	font-weight: bold;
-	width: 250px;
-	display: inline-block;
-	margin: 10px;
-	border: 1px solid var(--white);
+    color: var(--orange);
 }
 
-#top-button a{
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	text-decoration: none;
-	background-color: var(--orange);
-	color: var(--white);
-	font-family: var(--body-font); 
-	padding: 20px 15px;
-	border: 2px solid var(--white); 
-	border-radius: 5px;
-	cursor: pointer;
-	z-index: 1;
+nav a:hover {
+    color: var(--light-blue);
 }
 
-main {
-	padding: 20px;
+#actions {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
 }
 
-main p {
-	line-height: 1.6;
+#actions a {
+    color: var(--orange);
+    display: grid;
+    align-items: center;
+    
 }
 
-main h2 {
-	font-family: var(--header-font);
-	font-size: var(--h2-size);
-	line-height: 2;
+#logo {
+    background-color: var(--orange);
+    width: 200px;
+    height: 50px;
+
 }
 
-main h3 {
-	font-family: var(--header-font);
-	font-size: var(--h3-size);
-	margin-top: 10px;
-	text-align: center;
-	padding: 10px;
+body {
+	background-color: var(--cream);
 }
 
-ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+
+
+dd, p, li, nav, input {
+    font-family: var(--mont-font);
+    font-size: 16px;
 }
 
-ul img {
-	width: 100%;
+nav a, nav span, menu li, footer {
+    font-family: var(--bebas-font);
+    font-size: 20px;
+}
+
+
+
+#search-button {
+    background-color: var(--orange);
+    border: var(--orange);
+    margin-left: 0px;
+
+}
+input {
+   border: 3px solid var(--orange);
+   height: 40px;
+   margin-right: 0px;
 }
 
 section li {
@@ -201,6 +239,9 @@ figcaption {
 	width: 45%;
 }
 
+#sides {
+    background-color: var(--dark-blue);
+}
 footer {
 	background-color: var(--green);
 	padding: 20px;
@@ -234,7 +275,7 @@ footer a {
 }
 
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
-@media (min-width: 834px) {
+@media (min-width: 768px) {
 
     header {
         display: flex;
@@ -242,11 +283,77 @@ footer a {
         align-items: center;
     }
    
+    nav {
+        grid-area: nav;
+        min-width: 414px;
+        background-color: #ffffff;
+        box-shadow: 0px 3px 3px #bbb;
+        position: fixed;
+        top: 0;
+        z-index:5;
+    }
     nav ul {
+        grid-area: hamberger;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+        max-height: 0;
+    }
+    nav li img {
         display: flex;
-        flex-direction: row;
+    }
+    nav li a {
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+    }
+    nav label {
+        cursor: pointer;
+        display: inline-block;
+        user-select: none;
+        position: relative;
+        bottom: 5px;
+        left: 30px;
+    }
+    nav span {
+        display: block;
+        position: relative;
+     }
+    nav label svg {
+        display: block;
+    }
+    label span:before, label span:after {
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    nav input {
+        display: none;
+    }
+    nav input:checked ~ ul {
+        max-height: 550px;
+    }
+    nav h2 {
+        visibility: hidden;
+        height: 1px;
+        width: 1px;
+    }
+    
+    nav a {
+        color: var(--orange);
+    }
+    
+    nav a:hover {
+        color: var(--light-blue);
     }
    
+    #logo {
+        background-color: var(--orange);
+    }
+
     main ul {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
