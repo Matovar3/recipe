@@ -223,7 +223,11 @@ h2 {
 
 }
 
-#details
+dt {
+   font-family: var(--mont-font);
+   font-size: 16px;
+   font-weight: 700;
+}
 
 #ingredients {
     list-style: square;
